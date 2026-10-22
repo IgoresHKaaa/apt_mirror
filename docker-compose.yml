@@ -1,0 +1,25 @@
+services:
+  # aptly: зеркало Ubuntu только с пакетами из packages.list + свои пакеты.
+  # Управление — скриптом ./mirror.sh
+  aptly:
+    build:
+      dockerfile_inline: |
+        FROM debian:trixie-slim
+        RUN apt-get update && apt-get install -y --no-install-recommends \
+            aptly gnupg gpgv ubuntu-keyring ca-certificates curl \
+         && rm -rf /var/lib/apt/lists/*
+    restart: unless-stopped
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./data/aptly:/root/.aptly
+      - ./data/gnupg:/root/.gnupg
+      - ./incoming:/incoming
+
+  # Раздача по HTTP: http://<сервер>/ubuntu/, /internal/, /corp.gpg
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./data/aptly/public:/usr/share/nginx/html:ro

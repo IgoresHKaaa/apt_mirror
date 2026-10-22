@@ -1,0 +1,14 @@
+# /etc/apt/sources.list.d/ubuntu.sources на клиенте (Ubuntu 24.04).
+# Замените apt.corp.local на адрес вашего зеркала.
+# Все компоненты Ubuntu (main/restricted/universe/multiverse) aptly публикует одним компонентом main.
+Types: deb
+URIs: http://apt.corp.local/ubuntu
+Suites: noble noble-updates noble-security
+Components: main
+Signed-By: /etc/apt/keyrings/corp.gpg
+
+Types: deb
+URIs: http://apt.corp.local/internal
+Suites: noble
+Components: main
+Signed-By: /etc/apt/keyrings/corp.gpg
