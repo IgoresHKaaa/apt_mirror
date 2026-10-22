@@ -1,7 +1,0 @@
-# Данные aptly, ключи подписи, пакеты
-data/
-incoming/
-*.asc
-*.gpg
-*.key
-.update.lock
