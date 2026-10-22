@@ -38,6 +38,6 @@ docker compose up -d --build
 
 ```bash
 sudo curl -fsSL http://apt.corp.local/corp.gpg -o /etc/apt/keyrings/corp.gpg
-sudo cp client.sources /etc/apt/sources.list.d/ubuntu.sources   # предварительно заменить apt.corp.local
+sudo cp client.sources /etc/apt/sources.list.d/ubuntu.sources   
 sudo apt update
 ```
