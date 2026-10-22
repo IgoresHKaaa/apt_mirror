@@ -37,7 +37,7 @@ docker compose up -d --build
 ## Клиенты (Ubuntu 24.04)
 
 ```bash
-sudo curl -fsSL http://apt.corp.local/corp.gpg -o /etc/apt/keyrings/corp.gpg
+sudo curl -fsSL http://address_vm/corp.gpg -o /etc/apt/keyrings/corp.gpg
 sudo cp client.sources /etc/apt/sources.list.d/ubuntu.sources   
 sudo apt update
 ```
