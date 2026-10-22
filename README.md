@@ -34,13 +34,6 @@ docker compose up -d --build
 | Что опубликовано, какие есть версии | `./mirror.sh status` |
 | Откатить на прошлую версию | `./mirror.sh rollback 20261022-134750` |
 
-Автообновление раз в неделю (вск, 03:00)
-
-```bash
-echo '0 3 * * 0 root cd /opt/apt-mirror && ./mirror.sh update >> /var/log/apt-mirror.log 2>&1' \
-    > /etc/cron.d/apt-mirror
-```
-
 ## Клиенты (Ubuntu 24.04)
 
 ```bash
@@ -48,5 +41,3 @@ sudo curl -fsSL http://apt.corp.local/corp.gpg -o /etc/apt/keyrings/corp.gpg
 sudo cp client.sources /etc/apt/sources.list.d/ubuntu.sources   # предварительно заменить apt.corp.local
 sudo apt update
 ```
-
-
