@@ -2,6 +2,7 @@ services:
   # aptly: зеркало Ubuntu только с пакетами из packages.list + свои пакеты.
   # Управление — скриптом ./mirror.sh
   aptly:
+    network_mode: host
     build:
       dockerfile_inline: |
         FROM debian:trixie-slim

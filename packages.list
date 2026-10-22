@@ -1,26 +1,15 @@
-# Пакеты Ubuntu, которые попадут в зеркало.
-# Одна строка — один пакет (или запрос aptly). Зависимости подтянутся сами.
-# После правки: ./mirror.sh update
-#
-# Примеры запросов:
-#   nginx                    — пакет по имени
-#   postgresql-16            — конкретная версия ветки
-#   Priority (required)      — все пакеты с этим приоритетом
-#   Name (~ ^python3-)       — по регулярному выражению
-
-# --- Базовая система (без них не обновится сама ОС — не удаляйте) ---
+#то что надо системе, для ее работы
 Priority (required)
 Priority (important)
 Priority (standard)
 ubuntu-minimal
 ubuntu-server
-linux-generic
 linux-virtual
 openssh-server
 sudo
 cloud-init
 
-# --- Ваш софт: добавляйте ниже ---
+#софт который нужен
 curl
 wget
 htop
